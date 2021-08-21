@@ -3,7 +3,7 @@ import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuIcon from '@material-ui/icons/Menu';
-import { useState, useLayoutEffect } from 'react';
+import { useState, useLayoutEffect, } from 'react';
 
 export default function SimpleMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -16,13 +16,20 @@ export default function SimpleMenu() {
     setAnchorEl(null);
   };
 
-
+  // useState functions to show/hide the mobile and desktop nav menus
   const [mobileNavVisibility, setMobileNavVisibility] = useState("show")
   const [desktopNavVisibility, setDesktopNavVisibility] = useState("hidden")
 
+  // dynamically gets the current window size and updates the size variable
+  // in the useState function
   function useWindowSize() {
+
+    // useState to set the current size of the window
     const [size, setSize] = useState(0);
+
+    // useLayoutEffect to synchronously update the size variable
     useLayoutEffect(() => {
+
 
       function updateSize() {
         setSize(window.innerWidth);

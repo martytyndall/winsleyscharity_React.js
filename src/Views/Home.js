@@ -1,45 +1,95 @@
 import Image from "../Assets/Images/cropped-DSC_3837mod1.jpg";
-import { Parallax } from 'react-parallax';
-import { useState } from 'react';
+import { Parallax, Background } from 'react-parallax';
+import { useState, useLayoutEffect, componentDidMount } from 'react';
+
 
 
 
 const Home = () => {
 
+
+
     let windowWidth = window.innerWidth
+    
 
-    const [backgroundSize, setBackgroundSize] = useState(0)
+    const [parallaxHeight, setParallaxHeight] = useState(windowWidth / 3.66)
 
-    function getBackgroundSize(){
-        let imageHeight = document.getElementById("home-background").clientHeight
-        console.log(imageHeight);
+    // setParallaxHeight(document.getElementById("home-background").offsetHeight)
+
+
+
+     // dynamically gets the current window size and updates the size variable
+    // in the useState function
+    function useWindowSize() {
+
+        // useState to set the current size of the window
+        const [size, setSize] = useState(0);
+
+        // useLayoutEffect to synchronously update the size variable
+        useLayoutEffect(() => {
+
+
+        function updateSize() {
+            setSize(document.querySelector(".home-bg img").offsetHeight);            
+        }
+
+        window.addEventListener('resize', updateSize);
+        updateSize();
+        return () => window.removeEventListener('resize', updateSize);
+
+        }, []);
+
+        return size;
     }
 
-    getBackgroundSize()
+
+    function ShowWindowDimensions() {
+        const height = useWindowSize();
+        useLayoutEffect(() => {
+          setParallaxHeight(height)
+        })    
+      }
+
+    ShowWindowDimensions()
+
+
+
+    console.log(parallaxHeight);
+
+
+
 
     return (
-        <div className="container">
-            
+        <div className="container home-container">
             <Parallax
-                id="home-background"
-                className="home-background"
+                id="home-bg"
+                className="home-bg"
                 bgImage={Image}
-                bgImageAlt="Winsley Square image"
-                width={windowWidth}
+                bgImageStyle={{         
+                    height: 'auto',       
+                    width: '100%'
+                }}
                 renderLayer={percentage => (
-                    <div className="background-overlay"
-                        style={{                            
+                    <div
+                        className='bg-overlay'
+                        style={{
                             position: 'absolute',
-                            background: `rgba(102, 102, 102, ${percentage * 1})`,                            
-                            width: 2000,
-                            height: 400,
+                            background: `rgba(140, 138, 134, ${percentage * 0.75})`,
+                            // left: '50%',
+                            // top: '50%',
+                            width: '100%',
+                            height: '100%',
+                            // height: parallaxHeight,
                         }}
                     />
                 )}
                 >
-                <h1>Home</h1>
+                <div style={{
+                    height: parallaxHeight - 126,
+                    }}
+                />
+                <h1 className="home-title">Home</h1>
             </Parallax>
-
         </div>
        
     );
