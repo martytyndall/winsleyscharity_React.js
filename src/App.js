@@ -13,8 +13,8 @@ import History from './Views/History';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
+    <div className="App">
+    <Router>      
       <Header />
       <Switch>
         <Route exact path="/">
@@ -36,9 +36,9 @@ function App() {
       </Switch>
       <Footer />
       <CookieConsent overlay>This website uses cookies to enhance the user experience.</CookieConsent>
-    </div>
-    </Router>
     
+    </Router>
+    </div>
     
   );
 }

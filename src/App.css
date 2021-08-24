@@ -2,7 +2,9 @@
   text-align: center;
 }
 
-
+link{
+  text-decoration: none;
+}
 
 h3 {
   color: #474747;

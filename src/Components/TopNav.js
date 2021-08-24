@@ -4,6 +4,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuIcon from '@material-ui/icons/Menu';
 import { useState, useLayoutEffect, } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function SimpleMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -85,45 +86,45 @@ export default function SimpleMenu() {
       
 
       <div className={desktopNavVisibility} id="desktop-nav">
+
         <Button
           id="link-button"
           variant="contained" 
           color="primary" 
-          href="/"
         >
-        Home
+          <Link to="/">Home</Link>
         </Button>
+
         <Button
           id="link-button"
           variant="contained" 
           color="primary" 
-          href="/latest"
         >
-        Latest
+          <Link to="/latest">Latest</Link>
         </Button>
+
         <Button
           id="link-button"
           variant="contained" 
           color="primary" 
-          href="/staff"
         >
-        staff
+          <Link to="/staff">Staff</Link>
         </Button>
+
         <Button
           id="link-button"
           variant="contained" 
           color="primary" 
-          href="/history"
         >
-        History
+          <Link to="/history">History</Link>
         </Button>
+
         <Button
           id="link-button"
           variant="contained" 
           color="primary" 
-          href="/contact"
         >
-        Contact
+          <Link to="/contact">Contact</Link>
         </Button>
       </div>
 
