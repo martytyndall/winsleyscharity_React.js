@@ -48,7 +48,7 @@ export default function SimpleMenu() {
   function ShowWindowDimensions() {
     const width = useWindowSize();
     useLayoutEffect(() => {
-      if(width > 768){
+      if(width > 949){
         setMobileNavVisibility("hidden")
         setDesktopNavVisibility("show")
       } else {
@@ -78,6 +78,7 @@ export default function SimpleMenu() {
           <MenuItem onClick={handleClose}>Home</MenuItem>
           <MenuItem onClick={handleClose}>Latest News</MenuItem>
           <MenuItem onClick={handleClose}>Staff</MenuItem>
+          <MenuItem onClick={handleClose}>History</MenuItem>
           <MenuItem onClick={handleClose}>Contact</MenuItem>
         </Menu>
       </div>
@@ -107,6 +108,14 @@ export default function SimpleMenu() {
           href="/staff"
         >
         staff
+        </Button>
+        <Button
+          id="link-button"
+          variant="contained" 
+          color="primary" 
+          href="/history"
+        >
+        History
         </Button>
         <Button
           id="link-button"
