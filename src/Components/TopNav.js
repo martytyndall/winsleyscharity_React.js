@@ -5,6 +5,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import MenuIcon from '@material-ui/icons/Menu';
 import { useState, useLayoutEffect, } from 'react';
 import { Link } from 'react-router-dom';
+import TopNavStyles from '../Assets/css/TopNav.module.css'
 
 export default function SimpleMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -17,9 +18,15 @@ export default function SimpleMenu() {
     setAnchorEl(null);
   };
 
+
+  const display = TopNavStyles.display
+  const hidden = TopNavStyles.hidden
+
+
+
   // useState functions to show/hide the mobile and desktop nav menus
-  const [mobileNavVisibility, setMobileNavVisibility] = useState("show")
-  const [desktopNavVisibility, setDesktopNavVisibility] = useState("hidden")
+  const [mobileNavVisibility, setMobileNavVisibility] = useState(display)
+  const [desktopNavVisibility, setDesktopNavVisibility] = useState(hidden)
 
   // dynamically gets the current window size and updates the size variable
   // in the useState function
@@ -49,12 +56,12 @@ export default function SimpleMenu() {
   function ShowWindowDimensions() {
     const width = useWindowSize();
     useLayoutEffect(() => {
-      if(width > 949){
-        setMobileNavVisibility("hidden")
-        setDesktopNavVisibility("show")
+      if(width > 992){
+        setMobileNavVisibility(hidden)
+        setDesktopNavVisibility(display)
       } else {
-        setMobileNavVisibility("show")
-        setDesktopNavVisibility("hidden")
+        setMobileNavVisibility(display)
+        setDesktopNavVisibility(hidden)
 
       }
     })    
@@ -65,7 +72,7 @@ export default function SimpleMenu() {
 
   return (
     <div>
-      <div className={mobileNavVisibility} id="mobile-nav">
+      <div className={mobileNavVisibility} id={TopNavStyles.mobileNav}>
         <Button className="nav-button" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
           <MenuIcon />
         </Button>
@@ -76,19 +83,19 @@ export default function SimpleMenu() {
           open={Boolean(anchorEl)}
           onClose={handleClose}
         >
-          <MenuItem onClick={handleClose}>Home</MenuItem>
-          <MenuItem onClick={handleClose}>Latest News</MenuItem>
-          <MenuItem onClick={handleClose}>Staff</MenuItem>
-          <MenuItem onClick={handleClose}>History</MenuItem>
-          <MenuItem onClick={handleClose}>Contact</MenuItem>
+          <MenuItem className={TopNavStyles.linkButtonResponsive} onClick={handleClose}><Link to='/'>Home</Link></MenuItem>
+          <MenuItem className={TopNavStyles.linkButtonResponsive} onClick={handleClose}><Link to='/latest'>Latest News</Link></MenuItem>
+          <MenuItem className={TopNavStyles.linkButtonResponsive} onClick={handleClose}><Link to='/staff'>Staff</Link></MenuItem>
+          <MenuItem className={TopNavStyles.linkButtonResponsive} onClick={handleClose}><Link to='/history'>History</Link></MenuItem>
+          <MenuItem className={TopNavStyles.linkButtonResponsive} onClick={handleClose}><Link to='/contact'>Contact</Link></MenuItem>
         </Menu>
       </div>
       
 
-      <div className={desktopNavVisibility} id="desktop-nav">
+      <div className={desktopNavVisibility} id={TopNavStyles.deskTopNav}>
 
         <Button
-          id="link-button"
+          className={TopNavStyles.linkButton}
           variant="contained" 
           color="primary" 
         >
@@ -96,7 +103,7 @@ export default function SimpleMenu() {
         </Button>
 
         <Button
-          id="link-button"
+          className={TopNavStyles.linkButton}
           variant="contained" 
           color="primary" 
         >
@@ -104,7 +111,7 @@ export default function SimpleMenu() {
         </Button>
 
         <Button
-          id="link-button"
+          className={TopNavStyles.linkButton}
           variant="contained" 
           color="primary" 
         >
@@ -112,7 +119,7 @@ export default function SimpleMenu() {
         </Button>
 
         <Button
-          id="link-button"
+          className={TopNavStyles.linkButton}
           variant="contained" 
           color="primary" 
         >
@@ -120,7 +127,7 @@ export default function SimpleMenu() {
         </Button>
 
         <Button
-          id="link-button"
+          className={TopNavStyles.linkButton}
           variant="contained" 
           color="primary" 
         >

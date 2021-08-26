@@ -1,0 +1,35 @@
+.linkButton a, .linkButtonResponsive a{
+    text-decoration: none;
+}
+
+.linkButton a{
+    text-decoration: none;
+    color: white;
+}
+
+.linkButton{
+    margin-right: 15px !important;
+    width: 80px;
+}
+
+#deskTopNav{
+    margin-top: 80px;
+    justify-self: end;
+    align-items: center;
+}
+
+.display{
+    display: block;
+}
+  
+.hidden{
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+
+    .topnav{
+      justify-self: center;
+    }
+}

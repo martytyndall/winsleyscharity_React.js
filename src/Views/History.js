@@ -1,10 +1,13 @@
 import React from 'react'
+// import HistoryStyles from '../Assets/css/HistoryStyles.module.css'
+import CommonStyles from '../Assets/css/CommonStyles.module.css'
+
 
 const History = () => {
     return (
         <div className="container">
-            <h1 className="page-title">History</h1>
-            <div className="container home-content-container">            
+            <h1 className="pageTitle">History</h1>
+            <div className={CommonStyles.contentContainer}>            
                 <div className="home-content-about">
                     <p>
                     Arthur Winsley left much of his property (Brickhouse Farm in St. Botolph’s Parish) to the Charity in his Will (dated the 28th March 1726). It was converted into twelve almshouses and a Chapel for Colchester men over 60 years old ‘that had lived well and fallen into decay’.
@@ -29,7 +32,7 @@ const History = () => {
                     </p>                
                 </div>
                 <div className="history-thumbnail">
-                    <div class="container history-img-container">
+                    <div className="container history-img-container">
                         <div className="history-img">1</div>
                         <div className="history-img">2</div>
                         <div className="history-img">3</div>

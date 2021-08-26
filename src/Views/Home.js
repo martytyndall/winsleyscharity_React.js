@@ -1,39 +1,21 @@
 import React from 'react'
 import Image1 from "../Assets/Images/cropped-DSC_3837mod1.jpg";
 import Image2 from "../Assets/Images/Winsleys.jpg";
-// import { Parallax } from 'react-parallax';
-// import { useState, useLayoutEffect } from 'react';
+import GalleryComponent from '../Components/GalleryComponent';
 import Parallax from "../Components/ParallaxComponent";
-
-
+import Styles from "../Assets/css/HomeStyles.module.css"
 
 
 const Home = () => {
     return (
-        <div className="container home-container">
+        <div className={Styles.homeContainer}>
             <Parallax image={Image1}/>
-            {/* <Parallax    
-                style={{
-                    height: windowWidth / 4
-                }}
-                strength={200}
-                id="home-bg"
-                className="home-bg"
-                bgImage={Image1}
-                bgImageStyle={{
-                    height: 'auto',       
-                    width: '100%'
-                }}               
-                >               
-            </Parallax> */}
+            
 
-            <h1 className="page-title">Home</h1>
+            <h1 className="pageTitle">Home</h1>
 
-            <div className="container home-content-container">
-                <div className="home-thumbnail">
-                    <img src={Image2} alt="" />
-                </div>
-                <div className="home-content">
+            <div className={Styles.containerTop}>                
+                <div className={Styles.about} id="homeContent">
                     <h3>About Us</h3>
                     <p>
                         The Almshouse Charity of Arthur Winsley and others is a registered Charity and a member of the Almshouse Association and of the Housing Ombudsman Scheme.
@@ -45,9 +27,38 @@ const Home = () => {
                         Over the years, the Almshouses have been added to as a result of a number of bequests and endowments. Although there were once 88, there are now 80 as a result of improvements, resulting in the merging of some properties in order to offer a better standard of accommodation.
                     </p>                
                 </div>
+
+                <div className={Styles.thumbnail} id="homeThumbnail">
+                    <img src={Image2} alt="" />
+                </div>
                 
             </div>
+
             <br />
+
+            <div className={Styles.containerBottom}>                
+                <div className={Styles.gallery}>
+                    <GalleryComponent />
+                </div>
+                <div className={Styles.accommodation}>
+                    <h3>Accommodation</h3>
+                    <p>Our properties are of varying ages and the Trustees aim to continue to maintain these to a high standard making improvements to modernise where practical and affordable.
+
+There is a mix of accommodation, including one and two bedroom houses, bungalows and flats. Residents use their own furniture to equip their property to their own taste.
+
+Residents pay no rent but are required to make a fixed monthly contribution to maintenance and heating costs (WMC). This is set by the Trustees and is subject to an annual review each November.
+
+All homes have emergency alarms with pull cords monitored by the General Manager, Maintenance Supervisor and Helpline.Winsley Square
+
+The site provides beautiful outdoor lawns which has benches and a picnic area so that residents can enjoy the pleasant weather outdoors. There is also very limited parking available.</p>
+                </div>
+            </div>
+
+
+            
+
+
+
             
         </div>
         

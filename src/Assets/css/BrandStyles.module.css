@@ -1,0 +1,15 @@
+/* brand logo styling */
+.brandTitle {
+  color: orange;
+  
+}
+  
+.brand *{
+  text-decoration: none;
+  text-shadow: 3px 3px 4px #686868;
+}
+  
+.brandSubTitle{
+  color: blue;
+}
+
