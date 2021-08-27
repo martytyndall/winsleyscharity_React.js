@@ -43,14 +43,18 @@ const Home = () => {
                 <div className={Styles.accommodation}>
                     <h3>Accommodation</h3>
                     <p>Our properties are of varying ages and the Trustees aim to continue to maintain these to a high standard making improvements to modernise where practical and affordable.
-
-There is a mix of accommodation, including one and two bedroom houses, bungalows and flats. Residents use their own furniture to equip their property to their own taste.
-
-Residents pay no rent but are required to make a fixed monthly contribution to maintenance and heating costs (WMC). This is set by the Trustees and is subject to an annual review each November.
-
-All homes have emergency alarms with pull cords monitored by the General Manager, Maintenance Supervisor and Helpline.Winsley Square
-
-The site provides beautiful outdoor lawns which has benches and a picnic area so that residents can enjoy the pleasant weather outdoors. There is also very limited parking available.</p>
+                        <br /><br />
+                        There is a mix of accommodation, including one and two bedroom houses, bungalows and flats.
+                        <br /><br />
+                        Residents use their own furniture to equip their property to their own taste.
+                        <br /><br />
+                        Residents pay no rent but are required to make a fixed monthly contribution to maintenance and heating costs (WMC). This is set by the Trustees and is subject to an annual review each November.
+                        <br /><br />
+                        All homes have emergency alarms with pull cords monitored by the General Manager, Maintenance Supervisor and Helpline.
+                        <br /><br />
+                        The site provides beautiful outdoor lawns which has benches and a picnic area so that residents can enjoy the pleasant weather outdoors.
+                        <br /><br />
+                        There is also very limited parking available.</p>
                 </div>
             </div>
 

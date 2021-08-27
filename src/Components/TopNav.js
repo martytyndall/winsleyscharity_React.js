@@ -6,6 +6,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { useState, useLayoutEffect, } from 'react';
 import { Link } from 'react-router-dom';
 import TopNavStyles from '../Assets/css/TopNav.module.css'
+import useWindowSize from './functions/UseWindowSize';
+
 
 export default function SimpleMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -18,40 +20,12 @@ export default function SimpleMenu() {
     setAnchorEl(null);
   };
 
-
   const display = TopNavStyles.display
   const hidden = TopNavStyles.hidden
-
-
 
   // useState functions to show/hide the mobile and desktop nav menus
   const [mobileNavVisibility, setMobileNavVisibility] = useState(display)
   const [desktopNavVisibility, setDesktopNavVisibility] = useState(hidden)
-
-  // dynamically gets the current window size and updates the size variable
-  // in the useState function
-  function useWindowSize() {
-
-    // useState to set the current size of the window
-    const [size, setSize] = useState(0);
-
-    // useLayoutEffect to synchronously update the size variable
-    useLayoutEffect(() => {
-
-
-      function updateSize() {
-        setSize(window.innerWidth);
-        
-      }
-
-      window.addEventListener('resize', updateSize);
-      updateSize();
-      return () => window.removeEventListener('resize', updateSize);
-
-    }, []);
-
-    return size;
-  }
 
   function ShowWindowDimensions() {
     const width = useWindowSize();

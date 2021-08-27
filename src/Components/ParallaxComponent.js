@@ -12,9 +12,9 @@ const ParallaxComponent = (props) => {
 
 
     return (
-        <Parallax    
+        <Parallax
             style={{
-                height: windowWidth / 4
+                height: windowWidth / 3
             }}
             strength={200}
             id="home-bg"

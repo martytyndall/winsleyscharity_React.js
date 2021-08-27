@@ -32,7 +32,7 @@
     justify-self: start;
 }
 
-.galleryItemsTop img{
+/* .galleryItemsTop img{
     width: 200px;
     height: 200px;
 }
@@ -41,7 +41,7 @@
 .galleryItemsBottom img{
     width: 132px;
     height: 132px;
-}
+} */
 
   
   
@@ -52,13 +52,4 @@
     gap: 4px 4px;
     grid-auto-flow: row;
     width: min-content;
-}
-  
-.galleryItemsTop img{
-    width: 18.7vw;
-    height: 20vh;
-}
-.galleryItemsBottom img{
-    width: 12.3vw;
-    height: 20vh;
 }

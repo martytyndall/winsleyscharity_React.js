@@ -11,13 +11,19 @@ h1, h2, h3, h4, h5, p{
   color: #474747;
 }
 
- @media only screen and (max-width: 425px) {
-  .page-title{
+@media only screen and (max-width: 768px) {
+  .pageTitle{
     font-size: 30px;
     margin-top: 0px;
   }
+}
 
-  .react-parallax-bgimage{
-    margin-top: 20px;
+@media only screen and (max-width: 425px) {
+  .pageTitle{
+    font-size: 30px;
+    margin-top: 0px;
   }
 }
+
+
+
